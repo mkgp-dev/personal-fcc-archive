@@ -1,2 +1,2 @@
 # personal-fcc-archive
-Archives of my journey in freeCodeChamp
+Archives of my journey in freeCodeCamp

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Node.js Documentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <style>
+      body {
+        background-color: #282828;
+        color: #fff;
+      }
+      
+      #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 260px;
+        background: #242424;
+        border-right: 1px solid #3d3d3d;
+        overflow: auto;
+        padding: 16px;
+      }
+      
+      #navbar header {
+        font-family: "Roboto Mono", monospace;
+        font-weight: 700;
+        font-size: 18px;
+        margin: 0 0 10px 4px;
+      }
+      
+      #navbar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      #navbar li {
+        margin: 6px 0;
+      }
+      
+      #navbar .nav-link {
+        font-family: "DM Sans", sans-serif;
+        display: block;
+        padding: 8px 10px;
+        text-decoration: none;
+        color: #fff;
+        border: 1px solid #3d3d3d;
+        border-radius: 6px;
+        background: #525252;
+      }
+      
+      #navbar .nav-link:hover {
+        background: #3d3d3d;
+      }
+      
+      #main-doc {
+        margin-left: 290px;
+        padding: 22px;
+      }
+      
+      .main-section {
+        font-family: "DM Sans", sans-serif;
+        margin: 0 0 28px;
+      }
+      
+      .main-section > p {
+        margin: 0px;
+      }
+      
+      .main-section a {
+        color: #fff;
+        text-decoration: none;
+      }
+      
+      .main-section > header {
+        font-family: "Roboto Mono", monospace;
+        font-size: 22px;
+        font-weight: 700;
+        margin: 0 0 8px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid #e5e5e5;
+      }
+      
+      pre {
+        background: #242424;
+        border: 1px solid #202020;
+        border-radius: 8px;
+        padding: 12px;
+        overflow: auto;
+      }
+      
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+        color: #bebebe;
+      }
+      
+      @media (max-width: 800px) {
+        #navbar {
+          position: static;
+          width:auto;
+          height:auto;
+          border-right:none;
+          border-bottom:1px solid #3d3d3d;
+        }
+      
+        #main-doc {
+          margin:0;
+          padding:16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <nav id="navbar">
+      <header>Node.js Documentation</header>
+      <ul>
+        <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+        <li><a class="nav-link" href="#What_you_should_already_know">What you should already know</a></li>
+        <li><a class="nav-link" href="#Hello_World">Hello World</a></li>
+        <li><a class="nav-link" href="#Modules">Modules</a></li>
+        <li><a class="nav-link" href="#npm_and_scripts">npm and scripts</a></li>
+        <li><a class="nav-link" href="#Asynchronous">Asynchronous</a></li>
+        <li><a class="nav-link" href="#File_system">File system</a></li>
+        <li><a class="nav-link" href="#HTTP_server">HTTP server</a></li>
+        <li><a class="nav-link" href="#Environment_variables">Environment variables</a></li>
+        <li><a class="nav-link" href="#Reference">Reference</a></li>
+      </ul>
+    </nav>
+
+    <!-- Content -->
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <p>Node.js is a JavaScript runtime built on Chrome’s V8 engine. It lets you run JavaScript outside the browser to build servers, tools, and scripts.</p>
+        <p>Its event-driven, non-blocking I/O model makes it well-suited for I/O-heavy applications, CLIs, and microservices.</p>
+      </section>
+
+      <section class="main-section" id="What_you_should_already_know">
+        <header>What you should already know</header>
+        <p>This guide assumes a basic understanding of the command line and JavaScript syntax.</p>
+        <ul>
+          <li>Comfort with running commands like <code>node -v</code> and <code>npm -v</code></li>
+          <li>Basic JS (variables, functions, modules)</li>
+          <li>A code editor (VS Code, etc.)</li>
+        </ul>
+        <p>You can still follow along if you are new; just copy the examples and experiment.</p>
+      </section>
+
+      <section class="main-section" id="Hello_World">
+        <header>Hello world</header>
+        <p>Write a simple script and run it with Node.</p>
+        <pre>
+<code>// hello.js
+console.log("Hello, World!");
+
+// run in your terminal
+// node hello.js
+</code></pre>
+        <p>If you see the text printed in your terminal, your setup works.</p>
+      </section>
+
+      <section class="main-section" id="Modules">
+        <header>Modules</header>
+        <p>Node supports CommonJS with <code>require()</code> and ES Modules with <code>import</code>.</p>
+        <pre>
+<code>// CommonJS
+const os = require("os");
+console.log(os.platform());
+
+// ES Modules (package.json → { "type": "module" })
+import os from "os";
+console.log(os.platform());
+</code></pre>
+        <p>Pick one style and keep it consistent within a project.</p>
+      </section>
+
+      <section class="main-section" id="npm_and_scripts">
+        <header>npm and scripts</header>
+        <p>npm installs packages and runs project scripts defined in <code>package.json</code>.</p>
+        <pre>
+<code>npm init -y
+npm install express
+</code></pre>
+        <p>Add scripts to automate tasks like starting your app or running a dev server.</p>
+      </section>
+
+      <section class="main-section" id="Asynchronous">
+        <header>Asynchronous</header>
+        <p>Use callbacks, Promises, or <code>async/await</code> to perform non-blocking operations.</p>
+        <pre>
+<code>import { readFile } from "fs/promises";
+
+const text = await readFile("file.txt", "utf8");
+console.log(text);
+</code></pre>
+        <p>Prefer Promises and <code>async/await</code> for readable control flow.</p>
+      </section>
+
+      <section class="main-section" id="File_system">
+        <header>File system</header>
+        <p>The <code>fs</code> module lets you read and write files and directories.</p>
+        <pre>
+<code>import { mkdirSync, writeFileSync } from "fs";
+
+mkdirSync("logs", { recursive: true });
+writeFileSync("logs/app.log", "started");
+</code></pre>
+      </section>
+
+      <section class="main-section" id="HTTP_server">
+        <header>HTTP server</header>
+        <p>Create a simple server with the built-in <code>http</code> module.</p>
+        <pre>
+<code>import http from "http";
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.end("OK");
+});
+server.listen(3000);
+</code></pre>
+        <p>Visit <code>http://localhost:3000</code> in your browser to test it.</p>
+      </section>
+
+      <section class="main-section" id="Environment_variables">
+        <header>Environment variables</header>
+        <p>Use environment variables to store configuration like ports and secrets.</p>
+        <pre>
+<code># .env
+PORT=3000
+</code></pre>
+        <p>Load them with a library such as <code>dotenv</code> or your platform’s secret manager.</p>
+      </section>
+
+      <section class="main-section" id="Reference">
+        <header>Reference</header>
+        <p>Useful links:</p>
+        <ul>
+          <li><a href="https://nodejs.org/en/docs">Official Node.js Documentation</a></li>
+          <li><a href="https://npmjs.com">npm</a></li>
+          <li><a href="https://expressjs.com">Express</a></li>
+        </ul>
+        <p>Keep the Node version up to date and read the release notes to learn new features.</p>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marlboro</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <!-- stylesheet -->
+    <style>
+      :root {
+        --default-bg: #282828;
+        --background-plate-1: #1b1b1b;
+        --background-plate-2: #212121;
+        --background-plate-3: #8c8c8c;
+        --font-color: #e8eefc;
+        --font-muted: #94a3b8;
+      }
+      
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--default-bg);
+        color: var(--font-color);
+        margin: 0;
+      }
+      
+      #header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        backdrop-filter: saturate(120%) blur(6px);
+        border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+        z-index: 1000;
+      }
+      
+      .header-inner {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: .75rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        justify-content: space-between;
+      }
+      
+      #header-img {
+        width: auto;
+        height: 40px;
+      }
+      
+      #nav-bar {
+        display: flex;
+        gap: 0.75rem;
+      }
+      
+      #nav-bar .nav-link {
+        color: var(--font-color);
+        font-family: "Roboto Mono", monospace;
+        text-decoration: none;
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.5rem;
+      }
+      
+      main {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 6.5rem 1rem 4rem;
+      }
+      
+      section {
+        padding: 3rem 0;
+        border-bottom: 1px solid var(--background-plate-1);
+      }
+      
+      h1, h2, h3, #submit {
+        font-family: "Roboto Mono", monospace;
+      }
+      
+      p {
+        color: var(--font-muted);
+      }
+      
+      h1 {
+        margin: 0 0 0.5rem;
+        font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+      }
+      
+      h2 {
+        margin: 0 0 1rem;
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+      }
+      
+      .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+      
+      .card {
+        background: var(--background-plate-1);
+        border: 1px solid var(--background-plate-2);
+        padding: 1rem;
+        border-radius: 0.75rem;
+      }
+      
+      .demo {
+        aspect-ratio: 16/9;
+        max-width: 960px;
+      }
+      
+      #signup {
+        text-align: center;
+      }
+      
+      #form {
+        display: grid;
+        gap: 0.75rem;
+        max-width: 520px;
+        margin: 0 auto;
+      }
+      
+      label {
+        font-weight: 600;
+      }
+      
+      #email {
+        padding: 0.75rem 0.9rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--background-plate-2);
+        background: var(--background-plate-1);
+        color: var(--font-color);
+      }
+      
+      #submit {
+        cursor: pointer;
+        padding: 0.8rem 1rem;
+        border: 0;
+        border-radius: 0.6rem;
+        background: var(--background-plate-3);
+        font-weight: 700;
+        color: #3a3a3a;
+      }
+      
+      footer {
+        text-align: center;
+        color: var(--font-muted);
+        padding-top: 2rem;
+      }
+      
+      footer a {
+        text-decoration: none;
+        color: var(--font-muted);
+      }
+      
+      @media (max-width: 720px) {
+        #nav-bar {
+          flex-wrap: wrap;
+        }
+      
+        #header-img {
+          height: 32px;
+        }
+      
+        .features {
+          grid-template-columns: 1fr;
+        }
+      
+        main {
+          padding-top: 5.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header">
+      <div class="header-inner">
+        <a href="#hero"><img id="header-img" src="https://4vector.com/i/free-vector-marlboro-logo_090861_Marlboro_logo.png" alt="Logo">
+        <nav id="nav-bar">
+          <a class="nav-link" href="#features">Features</a>
+          <a class="nav-link" href="#demo">Demo</a>
+          <a class="nav-link" href="#signup">Subscribe</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero">
+        <h1>Marlboro</h1>
+        <p>American brand of cigarettes owned and manufactured by Philip Morris USA (a branch of Altria) within the United States and by Philip Morris International (PMI, now separate from Altria) in most global territories outside the US.</p>
+      </section>
+
+      <section id="features">
+        <h2>Features</h2>
+        <div class="features">
+          <div class="card">
+            <h3>Nicotine Delivery</h3>
+            <p>A notable feature is the use of ammonia to freebase nicotine, which allows for a more efficient and powerful delivery of nicotine to the smoker. This process has been described as creating "crack tobacco" by some experts.</p>
+          </div>
+          <div class="card">
+            <h3>Crafted Variants</h3>
+            <p>The brand has also introduced "crafted" or "artisanal" variants in some markets, such as Indonesia and Mexico, which feature different pack designs, a stylized sans-serif font, and sometimes a hand signature to suggest quality.</p>
+          </div>
+          <div class="card">
+            <h3>Brand Differentiation</h3>
+            <p>Marlboro has also strategically rebranded other product lines, such as Marlboro Bright Leaf, to "Bright Leaf" to differentiate them from the main international Marlboro brand and maintain its premium status.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="demo">
+        <h2>You can watch a review here</h2>
+        <div class="demo">
+          <iframe id="video" width="100%" height="100%" src="https://www.youtube.com/embed/6PwmeAAlH7k" title="Product video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section id="signup">
+        <h2>Subscribe to be notified</h2>
+        <form id="form" action="https://www.freecodecamp.com/email-submit" method="post">
+          <input id="email" name="email" type="email" placeholder="john.doe@example.com" required />
+          <input id="submit" type="submit" value="Subscribe" />
+        </form>
+      </section>
+
+      <footer>Made by <a href="https://github.com/mkgp-dev" target="_blank">@mkgpdev</footer>
+    </main>
+  </body>
+</html>
+** end of styles.css **
+

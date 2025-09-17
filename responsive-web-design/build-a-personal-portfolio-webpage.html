@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>mkgpdev Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --default-bg: #282828;
+        --bg-plate-1: #212121;
+        --bg-plate-2: #1b1b1b;
+        --bg-plate-3: #151515;
+        --bg-plate-4: #3a3a3a;
+        --bg-selected: #4cc9f0;
+        --default-color: #e8eefc;
+        --color-muted: #94a3b8;
+      }
+      
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      body {
+        margin: 0;
+        font-family: "DM Sans", sans-serif;
+        background: var(--default-bg);
+        color: var(--default-color);
+      }
+      
+      #navbar {
+        font-family: "Roboto Mono", monospace;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+        padding: 0 20px;
+        z-index: 1000;
+      }
+      
+      #navbar .default {
+        font-weight: 700;
+        letter-spacing: 0.3px;
+      }
+      
+      #navbar a {
+        color: var(--default-color);
+        text-decoration: none;
+        margin-left: 18px;
+        opacity: 0.9;
+      }
+      
+      #navbar a:hover {
+        color: var(--color-muted);
+      }
+      
+      section {
+        padding: 64px 20px;
+      }
+      
+      #welcome-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      
+      .default-base {
+        max-width: 900px;
+        padding: 32px;
+      }
+      
+      h1 {
+        font-family: "Roboto Mono", monospace;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        margin: 0 0 12px;
+      }
+      .sub {
+        color: var(--color-muted);
+        margin: 0 0 28px;
+      }
+      
+      #projects .grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(3, minmax(0,1fr));
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      
+      #projects h2 {
+        font-family: "Roboto Mono", monospace;
+        text-align: center;
+        margin-bottom: 18px;
+      }
+      
+      #projects h3 {
+        margin: 2px 0 0;
+      }
+      
+      .project-tile {
+        background: var(--bg-plate-1);
+        border: 1px solid var(--bg-plate-4);
+        border-radius: 16px;
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        transition: transform .2s ease, border-color .2s ease;
+      }
+      
+      .project-tile:hover {
+        transform: translateY(-4px);
+        border-color: var(--bg-selected);
+      }
+      
+      .project-tile:hover a {
+        color: var(--bg-selected);
+      }
+      
+      .project-tile p {
+        color: var(--color-muted);
+        margin: 0;
+      }
+      
+      .project-tile a {
+        color: var(--default-color);
+        text-decoration: none;
+      }
+      
+      footer {
+        padding: 40px 20px;
+        color: var(--color-muted);
+        text-align: center;
+      }
+      
+      @media (max-width: 900px) {
+        #projects .grid {
+          grid-template-columns: repeat(2, minmax(0,1fr));
+        }
+      }
+      
+      @media (max-width: 640px) {
+        #projects .grid {
+          grid-template-columns: 1fr
+        }
+      
+        #navbar {
+          height: 56px;
+        }
+      
+        #navbar a {
+          margin-left: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="navbar">
+      <div class="default">@mkgpdev</div>
+      <div class="links">
+        <a href="#welcome-section">Hello, World!</a>
+        <a href="#projects">Personal works</a>
+        <a id="profile-link" href="https://github.com/mkgp-dev" target="_blank">Github</a>
+      </div>
+    </nav>
+
+    <section id="welcome-section">
+      <div class="default-base">
+        <h1>Hello, World!</h1>
+        <p class="sub">this is just me, an amateur web developer.</p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Personal projects</h2>
+      <div class="grid">
+        <article class="project-tile">
+          <h3>dono.me</h3>
+          <p>A final project from CS50W, featuring a dynamic web application designed to manage crowdfunding campaigns.</p>
+          <a href="https://www.youtube.com/watch?v=MgB09fbrC_I" target="_blank">Watch demo</a>
+        </article>
+
+        <article class="project-tile">
+          <h3>Resume Makinator</h3>
+          <p>A final project from CS50x, featuring a simple yet powerful tool designed to simplify the process of creating professional resumes.</p>
+          <a href="https://www.youtube.com/watch?v=NbbN6YwFiC4" target="_blank">Watch demo</a>
+        </article>
+
+        <article class="project-tile">
+          <h3>Personal Blog in PHP</h3>
+          <p>A blog system built with PHP, seamlessly integrated into your portfolio and share updates in a professional and organized manner.</p>
+          <a href="https://github.com/mkgp-dev/Blog-Portfolio-PHP" target="_blank">Source code</a>
+        </article>
+
+        <article class="project-tile">
+          <h3>CS50x Worksheet</h3>
+          <p>Archives of my journey in CS50x 2024.</p>
+          <a href="https://github.com/mkgp-dev/personal-cs50x-archive" target="_blank">Source code</a>
+        </article>
+
+        <article class="project-tile">
+          <h3>CS50W Worksheet</h3>
+          <p>Archives of my journey in CS50W 2024.</p>
+          <a href="https://github.com/mkgp-dev/personal-cs50w-archive" target="_blank">Source code</a>
+        </article>
+
+        <article class="project-tile">
+          <h3>freeCodeCamp Worksheet</h3>
+          <p>Archives of my journey in freeCodeCamp.</p>
+          <a href="https://github.com/mkgp-dev/personal-fcc-archive" target="_blank">Source code</a>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      Built with basic HTML and modern CSS.
+    </footer>
+  </body>
+</html>

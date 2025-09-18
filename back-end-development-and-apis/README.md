@@ -1,1 +1,0 @@
-Certificate verification for Timestamp Microservice

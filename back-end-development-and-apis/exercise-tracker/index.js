@@ -81,7 +81,9 @@ app.post('/api/users/:id/exercises', async(req, res, next) => {
       return res.json({ error: 'Duration should not be equal or less than to 0.' });
     }
 
-    const date = new Date(_date);
+    // Fixed
+    // "If no date is supplied, the current date will be used."
+    const date = _date ? new Date(_date) : new Date();
     if (isNaN(date.getTime())) {
       return res.json({ error: 'Invalid Date.' });
     }

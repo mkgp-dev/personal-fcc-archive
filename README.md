@@ -1,5 +1,6 @@
 # Personal freeCodeCamp
-Archives of my journey in [freeCodeCamp](https://www.freecodecamp.org/mkgp-dev). This is only for you to read, make a basis, laugh at my code, and strictly **NOT COPY IT**.
+Archives of my journey in [freeCodeCamp](https://www.freecodecamp.org/mkgp-dev)
+> You can read, make a basis, or laugh at my code but strongly recommending you **not to copy** and learn the course properly.
 
 ## View my projects here:
 - [raw](https://github.com/mkgp-dev/personal-fcc-archive/tree/main/responsive-web-design) | ~~clean~~ | [access](https://codepen.io/collection/zzKRGV) `Responsive Web Design`

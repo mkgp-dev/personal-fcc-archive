@@ -14,6 +14,12 @@ To test:
 checkStrength("123456")
 checkStrength("PassWord%^!")
 checkStrength("C0d3&Fun!")
+
+References:
+https://regex101.com/
+https://stackoverflow.com/questions/4745112/javascript-regex-for-alphanumeric-string-with-length-of-3-5-chars
+https://stackoverflow.com/questions/4429847/check-if-string-contains-both-number-and-letter-at-least
+https://stackoverflow.com/questions/18057962/regex-pattern-including-all-special-characters
 */
 
 function checkStrength(password) {

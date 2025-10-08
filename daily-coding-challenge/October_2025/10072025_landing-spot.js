@@ -38,7 +38,7 @@ function findLandingSpot(matrix) {
       if (matrix[row][col] === 0) {
         // find neighbours and add them
         let sum = 0;
-        if (row > 0) sum += matrix[row - 1][col]; // up
+        if (row > 0) sum += matrix[row - 1][col];
         if (row < matrix.length - 1) sum += matrix[row + 1][col];
         if (col > 0) sum += matrix[row][col - 1];
         if (col < matrix[row].length - 1) sum += matrix[row][col + 1];
